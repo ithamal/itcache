@@ -1,0 +1,25 @@
+itcache:
+  enable: true
+  spring: true
+  templates:
+    default:
+      prefix: "cache:"
+      timeToLiveSeconds: 3600
+      preCaches: memory
+      implClass: redis
+    memory:
+      timeToLiveSeconds: 10
+      maxElements: 10000
+      implClass: hutool
+  caches:
+    test:
+      template: default
+      timeToLiveSeconds: 3600
+
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 4
